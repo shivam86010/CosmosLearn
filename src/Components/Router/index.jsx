@@ -8,7 +8,7 @@ import Learning from '../../Pages/Learning'
 import Pricing from '../../Pages/Pricing'
 import Blog from '../../Pages/Blog'
 import Careers from '../../Pages/Careers'
-
+import StudyTools from '../../Pages/StudyTools'
 function Index() {
   return (
     <Routes>
@@ -20,6 +20,7 @@ function Index() {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/careers" element={<Careers />} />
+        <Route path="/study-tools" element={<StudyTools />} />
       </Route>
 
     </Routes>
