@@ -1,14 +1,12 @@
 import { useState } from 'react'
 import './App.css'
+import Router from './Components/Router/index'
 
 function App() {
 
   return (
     <>
-  
-      <p >
-        Click on the Vite and React logos to learn more
-      </p>
+      <Router />
     </>
   )
 }
