@@ -9,6 +9,8 @@ import Pricing from '../../Pages/Pricing'
 import Blog from '../../Pages/Blog'
 import Careers from '../../Pages/Careers'
 import StudyTools from '../../Pages/StudyTools'
+import Trial from '../../Pages/Trial'
+import NotFound from '../../Pages/PageNotFound'
 function Index() {
   return (
     <Routes>
@@ -21,8 +23,11 @@ function Index() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/study-tools" element={<StudyTools />} />
+        <Route path="/trial" element={<Trial />} />
+
       </Route>
 
+      <Route path="*" element={<NotFound />} />
     </Routes>
   )
 }
