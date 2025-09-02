@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Button } from "../Components/UI/Button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../Components/UI/Card";
 import { MapPin, Clock, Users, Rocket, Brain, Code } from "lucide-react";
-// import CareerApplicationForm from "@/components/CareerApplicationForm";
+import CareerApplicationForm from "../Components/CareerApplication";
+
 
 const Careers = () => {
   const [applicationOpen, setApplicationOpen] = useState(false);
@@ -154,11 +155,11 @@ const Careers = () => {
       </main>
 
       
-      {/* <CareerApplicationForm
+      <CareerApplicationForm
         open={applicationOpen}
         onOpenChange={setApplicationOpen}
         jobTitle={selectedJob}
-      /> */}
+      />
     </div>
   );
 };
