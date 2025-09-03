@@ -48,6 +48,7 @@ import CosmosLoader from "../../Components/CosmosLoader ";
 import Layout from "../Layout";
 import Main from "../../Pages/index";
 import About from "../../Pages/About";
+import BlogPost from '../../Pages/BlogPost'
 
 // ✅ Lazy-load secondary/heavy pages
 const Explore = lazy(() => import("../../Pages/Explore"));
@@ -146,6 +147,8 @@ function Index() {
             </DelayedSuspense>
           }
         />
+
+        <Route path="/blog/:id" element={<BlogPost />} />
       </Route>
 
       {/* Not Found */}
