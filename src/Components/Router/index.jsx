@@ -49,7 +49,8 @@ import Layout from "../Layout";
 import Main from "../../Pages/index";
 import About from "../../Pages/About";
 import BlogPost from '../../Pages/BlogPost'
-
+import Subjects from "../../Pages/Subjects";
+import SubjectExplorer from "../../Pages/SubjectExplore";
 // ✅ Lazy-load secondary/heavy pages
 const Explore = lazy(() => import("../../Pages/Explore"));
 const Learning = lazy(() => import("../../Pages/Learning"));
@@ -89,6 +90,8 @@ function Index() {
         {/* Eager-loaded routes */}
         <Route path="/" element={<Main />} />
         <Route path="/about" element={<About />} />
+        <Route path="subjects" element={<Subjects />} />
+        <Route path="/subject/:subject" element={<SubjectExplorer />} />
 
         {/* Lazy-loaded routes wrapped with delayed loader */}
         <Route
