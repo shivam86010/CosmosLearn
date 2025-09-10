@@ -1,12 +1,11 @@
 import { Button } from "../Components/UI/Button";
 import { Card } from "../Components/UI/Card";
-import { Badge } from "@/components/ui/badge";
 import { Progress } from "../Components/UI/Progress";
-// import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-// import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-// import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../Components/UI/Tooltip";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "../Components/UI/Dialog";
+import { Popover, PopoverContent, PopoverTrigger } from "../Components/UI/Popover";
 import { Textarea } from "../Components/UI/TextArea";
-// import { Slider } from "@/components/ui/slider";
+import { Slider } from "../Components/UI/Slider";
 import { ArrowLeft, Play, Pause, RotateCcw, Maximize, Volume2,BookOpen,CheckCircle,Star,Minimize,StickyNote,Save,Info,Zap} from "lucide-react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { Canvas, useFrame } from "@react-three/fiber";
@@ -86,7 +85,7 @@ const InteractivePlanet = ({
         position={position}
         onClick={() => onPlanetClick(planetKey)}
         onPointerOver={() => setHovered(true)}
-        onPointerOut={() => setHovered(false)}
+        onPointerOut={() => setHovered(false)}            
       >
         <meshStandardMaterial 
           color={color} 
@@ -355,7 +354,7 @@ const Module = () => {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [notes, setNotes] = useState('');
   const [speed, setSpeed] = useState(1);
-  const [selectedPlanet, setSelectedPlanet] = useState<string | null>(null);
+  const [selectedPlanet, setSelectedPlanet] = useState(null);
 
   const moduleData = {
     'solar-system-explorer': {
@@ -370,7 +369,7 @@ const Module = () => {
         'Explore surface features of planets',
         'Discover moons and their characteristics'
       ],
-      scene: (props: any) => <SolarSystemScene {...props} speed={speed} onPlanetClick={setSelectedPlanet} />
+      scene: (props) => <SolarSystemScene {...props} speed={speed} onPlanetClick={setSelectedPlanet} />
     },
     'cell-structure': {
       title: 'Cell Structure & Function',
@@ -460,7 +459,8 @@ const Module = () => {
               <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
               Back to {currentModule.subject}
             </Button>
-            <Badge variant="secondary">{currentModule.difficulty}</Badge>
+            <span className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors 
+focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80">{currentModule.difficulty}</span>
           </div>
           
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">

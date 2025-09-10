@@ -51,6 +51,7 @@ import About from "../../Pages/About";
 import BlogPost from '../../Pages/BlogPost'
 import Subjects from "../../Pages/Subjects";
 import SubjectExplorer from "../../Pages/SubjectExplore";
+import Module from '../../Pages/Module'
 // ✅ Lazy-load secondary/heavy pages
 const Explore = lazy(() => import("../../Pages/Explore"));
 const Learning = lazy(() => import("../../Pages/Learning"));
@@ -92,7 +93,7 @@ function Index() {
         <Route path="/about" element={<About />} />
         <Route path="subjects" element={<Subjects />} />
         <Route path="/subject/:subject" element={<SubjectExplorer />} />
-
+        <Route path="/module/:subject?" element={<Module />} />
         {/* Lazy-loaded routes wrapped with delayed loader */}
         <Route
           path="/explore"
