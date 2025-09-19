@@ -5,7 +5,7 @@ import InteractiveMap from './InteractiveMap';
 import { Mesh } from 'three';
 
 const StarField = () => {
-  const starsRef = useRef<any>(null);
+  const starsRef = useRef(null);
   
   useFrame((state) => {
     if (starsRef.current) {
