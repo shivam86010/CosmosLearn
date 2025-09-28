@@ -1,8 +1,8 @@
 import React from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Environment, Text } from '@react-three/drei';
+// import { OrbitControls, Environment, Text } from '@react-three/drei';
 import InteractiveMap from './InteractiveMap';
-import { Card } from '@/components/ui/card';
+import { Card } from '../UI/Card';
 
 const GeographicScene = ({ onLocationSelect }: { onLocationSelect?: (location: any) => void }) => {
   return (
